@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build:server": "cmd /c \"call C:/Users/catyx/OneDrive/Desktop/pmx builder/config.bat && cd %SERVER_PATH% && npm install && npm run build\"",
+    "build:react": "cmd /c \"call C:/Users/catyx/OneDrive/Desktop/pmx builder/config.bat && cd %REACT_PATH% && npm install && npm run build && cmd /c %DEPLOY_PATH%/copy-react-build.bat\"",
+    "move:deploy": "cmd /c \"call C:/Users/catyx/OneDrive/Desktop/pmx builder/config.bat && cmd /c %DEPLOY_PATH%/move-deploy.bat\"",
+    "git:deploy": "cmd /c \"call C:/Users/catyx/OneDrive/Desktop/pmx builder/config.bat && cmd /c %DEPLOY_PATH%/git-deploy.bat\"",
+    "start": "cmd /c \"call C:/Users/catyx/OneDrive/Desktop/pmx builder/config.bat && cd %DEPLOY_PATH% && npm install && node app.js\"",
+    "autoDeploy": "npm run build:server && npm run build:react && npm run move:deploy && npm run git:deploy && npm run start"
+  }
+}
